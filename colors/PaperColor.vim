@@ -44,7 +44,7 @@ fun! s:register_default_theme()
         \       'color04' : ['#0087af', '31'],
         \       'color05' : ['#878787', '102'],
         \       'color06' : ['#005f87', '24'],
-        \       'color07' : ['#444444', '238'],
+        \       'color07' : ['#222222', '238'],
         \       'color08' : ['#bcbcbc', '250'],
         \       'color09' : ['#d70000', '160'],
         \       'color10' : ['#d70087', '162'],
@@ -966,7 +966,7 @@ fun! s:set_color_variables()
   call s:create_color_variables('navy',       color06 , 'DarkCyan') " storageclass
   call s:create_color_variables('foreground', color07 , 'LightGray')
 
-  call s:create_color_variables('nontext',   color08 , 'DarkGray')
+  call s:create_color_variables('nontext',   color00 , 'DarkGray')
   call s:create_color_variables('red',       color09 , 'LightRed') " import / try/catch
   call s:create_color_variables('pink',      color10 , 'LightGreen') " statement, type
   call s:create_color_variables('purple',    color11 , 'LightYellow') " if / conditional
@@ -1206,17 +1206,17 @@ fun! s:apply_syntax_highlightings()
   exec 'hi Float' . s:fg_orange
 
   exec 'hi Identifier' . s:fg_navy
-  exec 'hi Function' . s:fg_foreground
+  exec 'hi Function' . s:fg_foreground . s:ft_bold
 
-  exec 'hi Statement' . s:fg_pink . s:ft_none
-  exec 'hi Conditional' . s:fg_purple . s:ft_bold
+  exec 'hi Statement' . s:fg_purple . s:ft_bold
+  exec 'hi Conditional' . s:fg_blue . s:ft_bold
   exec 'hi Repeat' . s:fg_purple . s:ft_bold
   exec 'hi Label' . s:fg_blue
   exec 'hi Operator' . s:fg_aqua . s:ft_none
   exec 'hi Keyword' . s:fg_blue
   exec 'hi Exception' . s:fg_red
 
-  exec 'hi PreProc' . s:fg_blue
+  exec 'hi PreProc' . s:fg_foreground
   exec 'hi Include' . s:fg_red
   exec 'hi Define' . s:fg_blue
   exec 'hi Macro' . s:fg_blue
